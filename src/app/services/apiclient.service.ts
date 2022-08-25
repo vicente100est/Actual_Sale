@@ -1,6 +1,15 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
+import { Response } from '../models/response';
+import { Customer } from '../models/customer';
+
+const httpOption = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +24,9 @@ export class ApiclientService {
 
   getCustomers(): Observable<Response> {
     return this._http.get<Response>(this.url);
+  }
+
+  add(customer: Customer): Observable<Response>{
+    return this._http.post<Response>(this.url, customer, httpOption);
   }
 }
