@@ -18,13 +18,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HomeComponent } from './home/home.component';
 import { CostumerComponent } from './costumer/costumer.component';
 import { DialogCustomerComponent } from './costumer/dialog/dialogcustomer.component';
+import { DialogDeleteComponent } from './common/delete/dialogdelete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CostumerComponent,
-    DialogCustomerComponent
+    DialogCustomerComponent,
+    DialogDeleteComponent
   ],
   imports: [
     BrowserModule,
